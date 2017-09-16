@@ -3,14 +3,13 @@ var CELL_WIDTH = 101;
 var CELL_HEIGHT = 83;
 var OFFSET = 55;
 
-// 这是我们的玩家要躲避的敌人
+// 玩家要躲避的敌人
 var Enemy = function (x,y,speed) {
   // 要应用到每个敌人的实例的变量写在这里
   this.x = x;
   this.y = y;
   this.speed = speed;
-  // 我们已经提供了一个来帮助你实现更多
-  // 敌人的图片或者雪碧图，用一个我们提供的工具函数来轻松的加载文件
+  // 加载图片文件的工具函数
   this.sprite = 'images/enemy-bug.png';
 };
 
@@ -39,7 +38,7 @@ Enemy.prototype.checkCollisions = function (player) {
   }
 };
 
-// 现在实现你自己的玩家类
+// 现在实现玩家类
 var Player = function (x,y) {
   this.x = x;
   this.y = y;
@@ -87,7 +86,7 @@ for(var i=0;i<=3;i++){
 // 把玩家对象放进一个叫 player 的变量里面
 var player = new Player((2*CELL_WIDTH),(4*CELL_HEIGHT + OFFSET));
 
-// 这段代码监听游戏玩家的键盘点击事件并且代表将按键的关键数字送到 Play.handleInput()
+// 监听游戏玩家的键盘点击事件并且代表将按键的关键数字送到 Play.handleInput()
 // 方法里面。你不需要再更改这段代码了。
 document.addEventListener('keyup', function (e) {
   var allowedKeys = {
